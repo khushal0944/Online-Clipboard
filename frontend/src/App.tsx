@@ -163,7 +163,7 @@ function App() {
 					)}
 				</>
 			)}
-			<h1 className="dark:text-white py-5 text-center">Made with ❤️ by Khushal Kumar</h1>
+			<h1 className="dark:text-white py-5 text-center">Made with ❤️ by <a href="https://www.khushalkumar.me" className="hover:underline">Khushal Kumar</a></h1>
 		</div>
 	);
 }

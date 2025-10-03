@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { ThemeType, APIResponseType, TabType } from "./types";
 import { showToast } from "./utils/toast";
@@ -28,6 +28,7 @@ function App() {
 	const [retrieveLoading, setRetrieveLoading] = useState(false);
 
 	const prevContent = useRef<string>("");
+	const prevId = useRef<String>("");
 	const normalText = useRef<string>("");
 	const normalRetrieveText = useRef<string>("");
 
@@ -82,12 +83,17 @@ function App() {
 		normalText.current = "";
 	};
 
-	const handleRetrieve = async () => {
+	const handleRetrieve = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
 		if (!retrieveId || retrieveId.length !== 4) {
-			showToast("Invalid Board ID", "error");
+            showToast("Invalid Board ID", "error");
 			return;
 		}
-
+        if (retrieveId === prevId.current && retrieveContent) {
+            return;
+        }
+        
+        console.log("Hello ")
 		setRetrieveLoading(true);
 		try {
 			const data = await api.get(`/api/v1/board/${retrieveId}`);
@@ -95,6 +101,7 @@ function App() {
 				setRetrieveLoading(false);
 				setRetrieveContent(data.data.content);
 				normalRetrieveText.current = data.data.content;
+                prevId.current = retrieveId
 			}
 		} catch (error) {
 			showToast("Board Not Found", "error");
@@ -156,7 +163,7 @@ function App() {
 					)}
 				</>
 			)}
-			<h1 className="dark:text-white text-center">Made with ❤️ by Khushal Kumar</h1>
+			<h1 className="dark:text-white py-5 text-center">Made with ❤️ by Khushal Kumar</h1>
 		</div>
 	);
 }

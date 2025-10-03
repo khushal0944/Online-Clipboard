@@ -11,7 +11,7 @@ export function Header({ theme, onThemeToggle }: HeaderProps) {
 			<div></div>
 			<h1 className="text-5xl dark:text-white">Pastr</h1>
 			<button className="text-4xl" onClick={onThemeToggle}>
-				{theme === "light" ? "☀️" : "🌑"}
+				{theme === "light" ? "🌑" : "☀️"}
 			</button>
 		</div>
 	);

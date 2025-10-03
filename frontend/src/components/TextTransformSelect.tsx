@@ -10,7 +10,7 @@ export function TextTransformSelect({
 	return (
 		<select
 			onChange={(e) => onChange(e.target.value)}
-			className={`outline-none min-h-10 border border-gray-400 cursor-pointer m-1 text-center bg-gray-50 dark:bg-gray-700 dark:text-white rounded-md ${className}`}
+			className={`outline-none p-2 min-h-10 border border-gray-400 cursor-pointer m-1 text-center bg-gray-50 dark:bg-gray-700 dark:text-white rounded-md ${className}`}
 		>
 			<option value="original">Original</option>
 			<option value="uppercase">Uppercase</option>

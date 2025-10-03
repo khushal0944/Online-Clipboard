@@ -34,7 +34,7 @@ export function SaveTextForm({
 	};
 
 	return (
-		<div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm w-full max-w-2xl p-6 border border-gray-200 mb-6">
+		<div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm w-full max-w-2xl p-6 border-2 border-gray-900 dark:border-gray-200">
 			<h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
 				Save to Clipboard
 			</h2>
@@ -45,7 +45,7 @@ export function SaveTextForm({
 
 			<div className="mb-6">
 				<textarea
-					className="w-full h-40 p-3 border dark:bg-gray-800 dark:text-white focus:dark:bg-gray-950 border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200"
+					className="w-full bg-[#f2f2f2] focus:bg-[#fafafa] h-40 p-3 border dark:border-gray-300 dark:bg-gray-800 dark:text-white focus:dark:bg-gray-950 border-gray-700 rounded-md focus:outline-none focus:ring-1 focus:ring-gray-200 transition-colors"
 					placeholder="Enter your text here..."
 					value={content}
 					style={{ minHeight: "120px" }}

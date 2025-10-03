@@ -23,7 +23,7 @@ export function RetrievedTextDisplay({
 	};
 
 	return (
-		<div className="bg-white rounded-lg dark:bg-gray-900 shadow-sm w-full max-w-2xl p-6 border border-gray-200">
+		<div className="bg-white rounded-lg dark:bg-gray-900 shadow-sm w-full max-w-2xl p-6 border-2 border-gray-900 dark:border-gray-200 mt-5">
 			<h2 className="text-2xl dark:text-white font-bold text-gray-800 mb-2">
 				Retrieved Text
 			</h2>
@@ -33,13 +33,13 @@ export function RetrievedTextDisplay({
 
 			<textarea
 				disabled
-				className="w-full h-40 p-3 border border-gray-300 dark:bg-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+				className="w-full h-40 p-3 border border-gray-700 dark:border-gray-300 bg-[#f2f2f2] dark:bg-gray-800 dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
 				placeholder="Enter your text here..."
 				value={retrieveContent}
 				style={{ minHeight: "50px" }}
 			/>
 
-			<div className="flex justify-between">
+			<div className="flex justify-between mt-5">
 				<TextTransformSelect onChange={onTransform} />
 				<CopyButton
 					text={retrieveContent}
